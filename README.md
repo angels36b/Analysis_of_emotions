@@ -21,3 +21,11 @@ Pasos en el proceso:
 4. Entrenar un clasificador LogisticRegression.
 5. Predecir sobre conjunto de prueba.
 6. Mostrar classification_report (precision, recall, f1-score y support).
+
+
+Concepts
+What are n-grams:
+The smallest structures of the language we work with are called n-grams. The n-gram has a parameter n, which is the number of words that fall into this representation of the text.
+
+If n = 1, then we look at how many times each word appeared in the text. We get unigrams
+If n = 2, then we look at how many times each pair of consecutive words appeared in the text. We get bigrams
