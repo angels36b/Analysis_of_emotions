@@ -29,3 +29,36 @@ The smallest structures of the language we work with are called n-grams. The n-g
 
 If n = 1, then we look at how many times each word appeared in the text. We get unigrams
 If n = 2, then we look at how many times each pair of consecutive words appeared in the text. We get bigrams
+
+step and step
+
+# Firts Get data Sample 
+1. firts we get the data sample positive and negative
+Сначала мы получаем образец данных
+2. We organize the data, indicate that the table seperator is (;), and select column 3, which is the information we going to evaluate.
+Мы организуем данные, указываем, что разделитеь таблицы - это (;) и выбираем столбец 3, который седержит информатцию для оценки
+# Seconds fragmentation of the text
+
+3. We use the module ntlk. It´s nGram library. Extract contiguous sequences of n elements (usually words or lettes) from a text.
+мы используем модуль ntlk, это библиотека nGram. Извлекает непрерывные последовательности из n элементов (обычно слов или букв) из текста.
+
+# Vectorizacion - Векторизация
+4. The vectorizer converts a word or set of words into a numeric vector that is understandable to a machine learning algorithm that is used to working with numeric tabular data.
+
+Векторизатор преобразует слово или набор слов в числовой вектор, понятный алгоритму машинного обучения, который привык работать с числовыми табличными данными.
+
+
+Самый простой способ извлечь признаки из текстовых данных -- векторизаторы: CountVectorizer и TfidfVectorizer
+
+The CountVectorizer object does the following thing:
+
+builds for each document (each line that comes to it) a vector of dimension n, where n is the number of words, or n-grams in the entire corpus
+fills each i-th element with the number of occurrences of a word in this document.
+
+Объект CountVectorizer делает следующую вещь:
+
+строит для каждого документа (каждой пришедшей ему строки) вектор размерности n, где n -- количество слов или n-грам во всём корпусе
+заполняет каждый i-тый элемент количеством вхождений слова в данный документ
+
+# Model - Logistic Regression - RandomForest - XGBoost
+
