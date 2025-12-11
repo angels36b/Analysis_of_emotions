@@ -35,13 +35,10 @@ learning_rate=0.1, n_estimators=1000, max_depth=5, min_child_weight=3, gamma=0.2
 5. Predecir sobre conjunto de prueba.
 6. Mostrar classification_report (precision, recall, f1-score y support).
 
-==================================================
-               COMPARISON OF ALL MODELS
-==================================================
+=======================================
+  RESULTATS - COMPARISON OF ALL MODELS
+=======================================
 
-
-
-=============
  TF-ID УНИГРАМ - LogistRegresion ================
               precision    recall  f1-score   support
 
