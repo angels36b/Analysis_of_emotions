@@ -124,8 +124,9 @@ The results are critically poor (~50% accuracy), essentially no better than rand
 
 
 
-Notes:
-Concepts
+# ====== Notes  - Констра ======:
+**Concepts**
+
 What are n-grams:
 The smallest structures of the language we work with are called n-grams. The n-gram has a parameter n, which is the number of words that fall into this representation of the text.
 
