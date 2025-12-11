@@ -14,7 +14,20 @@ learning_rate=0.1, n_estimators=1000, max_depth=5, min_child_weight=3, gamma=0.2
 5. En la sección de vectorización TF-IDF, de manera análoga a los unigramas y pentagramas, calcule el classification_report para bigramas y trigramas. Publique los resultados en el informe e indique si cambió la precisión (f1-score) al usarlos en comparación con los unigramas y pentagramas.
 
 
-Pasos en el proceso:
+# Самостоятельная работа
+
+1. Изучите материал, представленный в борде.
+2. Выполните все ячейки и получите результаты.
+3. Приведите результаты таблицы classification_report в под этим заданием для модели LogisticRegression
+4. Примените 2 альтернативных использованному алгоритму для решения задачи классификации (для примера XGBClassifier и еще какой-то один) и получите результаты в таблице classification_report
+5. Для XGBClassifier вам потребуется задать параметры
+```learning_rate=0.1, n_estimators=1000, max_depth=5, min_child_weight=3, gamma=0.2, subsample=0.6, colsample_bytree=1.0, objective='binary:logistic', nthread=4, scale_pos_weight=1, seed=27```
+
+6. В разделе TF-IDF векторизация по аналогии с униграммами и пентаграммами вычислите classification_report для биграмм, триграмм опубликуйте результаты в отчете и укажите изменилась ли точность f1-score при их использовании по сравнению с униграммами и пентаграммами.
+
+
+**Pasos en el proceso:** 
+
 1. Cargar los CSV en pandas y combinar/etiquetar.
 2. Preprocesar texto (limpieza básica).
 3. Vectorizar texto (por ejemplo, TF-IDF).
