@@ -22,7 +22,109 @@ Pasos en el proceso:
 5. Predecir sobre conjunto de prueba.
 6. Mostrar classification_report (precision, recall, f1-score y support).
 
+==================================================
+               COMPARISON OF ALL MODELS
+==================================================
 
+
+
+=============
+ TF-ID УНИГРАМ - LogistRegresion ================
+              precision    recall  f1-score   support
+
+    negative       0.72      0.46      0.56     28108
+    positive       0.61      0.82      0.70     28601
+
+    accuracy                           0.64     56709
+   macro avg       0.66      0.64      0.63     56709
+weighted avg       0.66      0.64      0.63     56709
+
+=============
+ TF-ID ВЫНИГРАМ - LogistRegresion ================
+              precision    recall  f1-score   support
+
+    negative       0.72      0.66      0.69     28108
+    positive       0.69      0.75      0.72     28601
+
+    accuracy                           0.71     56709
+   macro avg       0.71      0.71      0.71     56709
+weighted avg       0.71      0.71      0.71     56709
+
+=============
+ TF-ID Триграмма - LogistRegresion ================
+              precision    recall  f1-score   support
+
+    negative       0.73      0.45      0.56     28108
+    positive       0.61      0.83      0.70     28601
+
+    accuracy                           0.64     56709
+   macro avg       0.67      0.64      0.63     56709
+weighted avg       0.67      0.64      0.63     56709
+
+=============
+ TF-ID 5 Gram - LogistRegresion ================
+Pentagramas:               precision    recall  f1-score   support
+
+    negative       0.52      0.99      0.68     28108
+    positive       0.95      0.11      0.19     28601
+
+    accuracy                           0.55     56709
+   macro avg       0.74      0.55      0.44     56709
+weighted avg       0.74      0.55      0.44     56709
+
+=============
+  RESULTADOS XGBClassifier ================
+              precision    recall  f1-score   support
+
+    negative       0.75      0.68      0.71     28108
+    positive       0.71      0.77      0.74     28601
+
+    accuracy                           0.73     56709
+   macro avg       0.73      0.73      0.73     56709
+weighted avg       0.73      0.73      0.73     56709
+
+
+=== KNN / K-ближайших соседей ===
+              precision    recall  f1-score   support
+
+    negative     0.5389    0.9719    0.6934     28108
+    positive     0.8686    0.1829    0.3022     28601
+
+    accuracy                         0.5739     56709
+   macro avg     0.7038    0.5774    0.4978     56709
+weighted avg     0.7052    0.5739    0.4961     56709
+
+
+# Результаты анализа данных по отелю
+
+Model                     Accuracy   F1-Score  
+---------------------------------------------
+Baseline (Unigrams)       0.4951     0.4949
+TF-IDF (Unigrams)         0.4939     0.4934
+TF-IDF (Trigrams)         0.5177     0.5130
+XGBoost                   0.5020     0.5014
+Random Forest             0.4846     0.4777
+
+
+# Conclusiont of both Results
+
+**For the Positive/Negative Sentiment Dataset:**
+The models demonstrate acceptable performance (73% accuracy with XGBoost), indicating that the features (text data) contain discernible sentiment patterns.
+
+**Для набора данных с положительной/отрицательной тональностью:**
+Модели демонстрируют приемлемую производительность (точность 73% с XGBoost), что указывает на то, что признаки (текстовые данные) содержат различимые паттерны тональности.
+
+**For the Hotel Review Dataset:**
+The results are critically poor (~50% accuracy), essentially no better than random guessing. This strongly suggests fundamental issues with the data itself, such as poor labeling, highly ambiguous text, class imbalance, or that the sentiment signal is too weak or complex for the features extracted.
+
+**Для набора данных с отзывами об отелях:**
+Результаты критически низкие (~50% точности), по сути не лучше случайного угадывания. Это явно указывает на фундаментальные проблемы с самими данными: плохая разметка, сильно неоднозначный текст, дисбаланс классов или слишком слабый/сложный для извлеченных признаков сигнал тональности. 
+
+
+
+
+
+Notes:
 Concepts
 What are n-grams:
 The smallest structures of the language we work with are called n-grams. The n-gram has a parameter n, which is the number of words that fall into this representation of the text.
@@ -31,6 +133,7 @@ If n = 1, then we look at how many times each word appeared in the text. We get 
 If n = 2, then we look at how many times each pair of consecutive words appeared in the text. We get bigrams
 
 step and step
+
 
 # Firts Get data Sample 
 1. firts we get the data sample positive and negative
@@ -61,4 +164,3 @@ fills each i-th element with the number of occurrences of a word in this documen
 заполняет каждый i-тый элемент количеством вхождений слова в данный документ
 
 # Model - Logistic Regression - RandomForest - XGBoost
-
